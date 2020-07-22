@@ -11,7 +11,5 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit() {
   }
-onAddRecipe(){
-   this.productService.addProduct(newProduct);
-}
+
 }
