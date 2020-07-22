@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Recipe } from "../models/recipe.model";
 import { Ingredient } from "../models/ingredient.model";
+import { ShoppingService } from "./shopping.service";
 
 @Injectable()
 export class RecipeService {
-  private recipes: Recipe[] = [
+  private _recipes: Recipe[] = [
     new Recipe(
       "Tasty Schnitzel",
       "A super-tasty Schnitzel - just awesome!",
@@ -21,7 +22,7 @@ export class RecipeService {
 
   constructor(private shoppingService : ShoppingService) { }
   
-  get recipes(){
+  getRecipes(){
     return this._recipes.slice();
   }
 
