@@ -22,7 +22,7 @@ export class RecipeService {
 
   constructor(private shoppingService : ShoppingService) { }
   
-  getRecipes(){
+  get recipes(){
     return this._recipes.slice();
   }
 

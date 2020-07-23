@@ -12,6 +12,7 @@ import { RecipeService } from "./service/recipe.service";
 import { ShoppingService } from "./service/shopping.service";
 import { RecipeListComponent } from "./recipes/recipe-list/recipe-list.component";
 import { RecipeItemComponent } from "./recipes/recipe-list/recipe-item/recipe-item.component";
+import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -22,7 +23,8 @@ import { RecipeItemComponent } from "./recipes/recipe-list/recipe-item/recipe-it
     RecipesComponent,
     ShoppingListComponent,
     RecipeListComponent,
-    RecipeItemComponent
+    RecipeItemComponent,
+    RecipeDetailComponent
   ],
   bootstrap: [AppComponent],
   providers: [RecipeService, ShoppingService]
