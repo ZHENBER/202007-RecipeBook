@@ -10,9 +10,9 @@ import { Recipe } from "../../models/recipe.model";
 export class RecipeListComponent implements OnInit {
   @Input() recipes: Recipe[];
 
-  constructor(private recipeService: RecipeService) {
-    this.recipes = recipeService.recipes;
-  }
+  constructor(private recipeService: RecipeService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.recipes = this.recipeService.recipes;
+  }
 }

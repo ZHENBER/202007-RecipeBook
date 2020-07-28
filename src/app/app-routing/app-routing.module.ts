@@ -5,16 +5,17 @@ import { ShoppingListComponent } from "../shopping-list/shopping-list.component"
 import { RecipeDetailComponent } from "../recipes/recipe-detail/recipe-detail.component";
 
 const routes: Routes = [
-  { path: '#', redirectTo: 'recipes' }, // [url]/
-  { path: 'recipes', component: RecipesComponent }, // [url]/recipes
-  { path: 'recipes/:id', component: RecipeDetailComponent }, // [url]/recipes
-  { path: 'shopping-list', component: ShoppingListComponent }, // [url]/shopping-list
+  { path: "#", redirectTo: "recipes" }, // [url]/
+  { path: "recipes", component: RecipesComponent,// [url]/recipes
+    children: [
+      { path: ":idx", component: RecipeDetailComponent }// [url]/recipes/
+    ] 
+  },
+  { path: "shopping-list", component: ShoppingListComponent } // [url]/shopping-list
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { ShoppingService } from "../service/shopping.service";
 
 @Component({
-  selector: 'app-shopping-list',
-  templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css']
+  selector: "app-shopping-list",
+  templateUrl: "./shopping-list.component.html",
+  styleUrls: ["./shopping-list.component.css"]
 })
 export class ShoppingListComponent implements OnInit {
-
-  constructor() { }
+  ingredientList = [];
+  constructor(private shoppingService: ShoppingService) {}
 
   ngOnInit() {
+    this.ingredientList = this.shoppingService.ingredients;
   }
-
 }
